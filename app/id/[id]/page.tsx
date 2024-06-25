@@ -5,7 +5,11 @@ import Image from 'next/image'
 import { ExclamationTriangleIcon, ChevronLeftIcon } from '@heroicons/react/24/solid'
 import { useState, useRef, useEffect } from 'react'
 
-const DanaID = ({ id }) => {
+interface DanaIDProps {
+  id: string;
+}
+
+const DanaID: React.FC<DanaIDProps> = ({ id }) => {
    const ref = useRef(Array(6).fill(null))
    const uidValidation = uuid4.valid(id)
 
