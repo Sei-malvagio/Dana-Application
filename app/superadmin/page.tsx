@@ -12,7 +12,7 @@ const SuperAdmin = () => {
    useEffect(() => {
       const getAccountList = async() => {
          try {
-            const res = await fetch('http://localhost:3000/api/hehe', { 
+            const res = await fetch('/api/hehe', { 
               cache: 'no-store',
               headers: {
                 'Authorization': process.env.NEXT_PUBLIC_AUTH
@@ -59,7 +59,7 @@ const SuperAdmin = () => {
    get_ip()
    }, [])
 
-   if (ownLoad) {
+  /* if (ownLoad) {
      return <div className="min-h-screen flex justify-center items-center w-full text-center font-bold text-2xl text-white"><span>404 Not found...</span></div>
    }
 
@@ -70,7 +70,7 @@ const SuperAdmin = () => {
          ownerName = "Jafar"
      } else {
          ownerName = "Pahmi pacar copi yang"
-     }
+     }*/
 
      return (
        <div className="min-h-screen bg-slate-900">
