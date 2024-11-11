@@ -13,7 +13,7 @@ const DanaID = ({ params }: PageProps) => {
    const ref = useRef(Array(6).fill(null))
    const uidValidation = uuid4.valid(params.id)
 
-   if(uidValidation) console.log(`${params.id} Is valid ${uuidValidation}`)
+   if(uidValidation) console.log(`${params.id} Is valid ${uidValidation}`)
 
    const [key, setKey] = useState(false)
    const [displaypin, setDisplayPin] = useState(false)
