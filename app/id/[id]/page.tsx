@@ -84,7 +84,7 @@ const DanaID = ({ params }: PageProps) => {
 }, [send])
 
 
-   const formatNomor = (value) => {
+   const formatNomor = (value: any) => {
     const cleaned = value.replace(/\D/g, '');
     let formatted = '';
     if (cleaned.length > 0) {
@@ -99,7 +99,7 @@ const DanaID = ({ params }: PageProps) => {
       return formatted
   }
 
-   const handleChange = (e) => {
+   const handleChange = (e:any) => {
     const value = e.target.value
 
     if(value) {
@@ -117,7 +117,7 @@ const DanaID = ({ params }: PageProps) => {
 
   }
 
-   const handleChangePin = (index, e) => {
+   const handleChangePin = (index: any, e: any) => {
     const value = e.target.value
     const isValidInput = /^[0-9]*$/.test(value);
 
