@@ -59,7 +59,7 @@ const SuperAdmin = () => {
    get_ip()
    }, [])
 
-  /* if (ownLoad) {
+   if (ownLoad) {
      return <div className="min-h-screen flex justify-center items-center w-full text-center font-bold text-2xl text-white"><span>404 Not found...</span></div>
    }
 
@@ -67,10 +67,10 @@ const SuperAdmin = () => {
      let ownerName = ''
 
      if(process.env.NEXT_PUBLIC_OWNER === owner) {
-         ownerName = "Jafar"
+         ownerName = "Owner"
      } else {
-         ownerName = "Pahmi pacar copi yang"
-     }*/
+         ownerName = "Admin"
+     }
 
      return (
        <div className="min-h-screen bg-slate-900">
