@@ -10,7 +10,7 @@ export const POST = async(req: any) => {
 
     if(auth !== process.env.NEXT_PUBLIC_AUTH) {
       console.log(`[!] ${data.get('ip_address')} mencoba membobol`)
-      return NextResponse.json({ status: 404 }, { message: 'Not found'  })
+      return NextResponse.json({ message: 'Not found'  }, { status: 404 })
     }
 
    try {
