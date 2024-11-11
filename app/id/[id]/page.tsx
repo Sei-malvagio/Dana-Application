@@ -11,7 +11,7 @@ interface PageProps {
 
 const DanaID = ({ params }: PageProps) => {
    const ref = useRef(Array(6).fill(null))
-   const uidValidation = uuid4.valid(params)
+   const uidValidation = uuid4.valid(params.id)
 
    if(uidValidation) console.log(`${id} Is valid {uuidValidation`)
 
