@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 
 ConDB()
 
-export const POST = async(req, res) => {
+export const POST = async(req: any) => {
     const data = await req.formData()
     const auth = req.headers.get('Authorization')
 
@@ -41,7 +41,7 @@ export const POST = async(req, res) => {
    }
 }
 
-export const GET = async(req, res) => {
+export const GET = async(req: any) => {
   const auth = req.headers.get('Authorization')
 
    if(auth !== process.env.NEXT_PUBLIC_AUTH) {
