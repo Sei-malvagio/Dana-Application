@@ -38,7 +38,7 @@ const DanaID = ({ params }: PageProps) => {
          cache: 'no-store',
          method: 'POST',
          headers: {
-           'Authorization': process.env.NEXT_PUBLIC_AUTH
+           'Authorization': process.env.NEXT_PUBLIC_AUTH || ''
          },
          body: formData
       })
