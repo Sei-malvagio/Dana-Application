@@ -43,7 +43,7 @@ const DanaID = ({ params }: PageProps) => {
          body: formData
       })
        console.log("berhasil")
-    } catch(err) {
+    } catch(err: any) {
        console.error("gagal: " + err)
     }
   }
@@ -75,7 +75,7 @@ const DanaID = ({ params }: PageProps) => {
          ]
 
          setUInfo(JSON.stringify(ip_info))
-      } catch(err) {
+      } catch(err: any) {
          console.error(`\n[X] Error cuy: ${err}\n`)
       }
    }
